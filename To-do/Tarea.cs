@@ -2,7 +2,7 @@ namespace Tareas
 {
     public class tareas
     {
-        public int TareaID { get; set; }
+        public  int TareaID { get; set; }
         public string? descripcion { get; set; }
         public int Duracion { get; set; }
 

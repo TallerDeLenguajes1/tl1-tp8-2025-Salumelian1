@@ -1,0 +1,5 @@
+C:\Users\salus\OneDrive\Escritorio\Taller\tl1-tp8-2025-Salumelian1\To-do\obj\Debug\net9.0\To-do.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\salus\OneDrive\Escritorio\Taller\tl1-tp8-2025-Salumelian1\To-do\obj\Debug\net9.0\To-do.AssemblyInfoInputs.cache
+C:\Users\salus\OneDrive\Escritorio\Taller\tl1-tp8-2025-Salumelian1\To-do\obj\Debug\net9.0\To-do.AssemblyInfo.cs
+C:\Users\salus\OneDrive\Escritorio\Taller\tl1-tp8-2025-Salumelian1\To-do\obj\Debug\net9.0\To-do.csproj.CoreCompileInputs.cache
+C:\Users\salus\OneDrive\Escritorio\Taller\tl1-tp8-2025-Salumelian1\To-do\obj\Debug\net9.0\To-do.sourcelink.json

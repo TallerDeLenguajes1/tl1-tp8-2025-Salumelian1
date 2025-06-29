@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System;
-using Tareas;
+using tareas;
 
 class Program
 {
-    static List<tareas> TareasPendientes = new List<tareas>();
-    static List<tareas> TareasRealizadas = new List<tareas>();
+    static List<Tareas> TareasPendientes = new List<Tareas>();
+    static List<Tareas> TareasRealizadas = new List<Tareas>();
     static int Contadorid = 1000;
     static void main()
     {
@@ -48,7 +48,7 @@ class Program
             string? desc = Console.ReadLine();
             Console.WriteLine("Ingresar la duracion de la tarea: ");
             int dur = Convert.ToInt32(Console.ReadLine());
-            TareasPendientes.Add(new tareas(Contadorid++, desc!, dur));
+            TareasPendientes.Add(new Tareas(Contadorid++, desc!, dur));
         }
     }
     static void MoverTareaRealizada()
@@ -56,7 +56,7 @@ class Program
         int id;
         Console.WriteLine("Ingrese el id de la tarea realizada: ");
         id = Convert.ToInt32(Console.ReadLine());
-        tareas Tarea = TareasPendientes.Find(t => t.TareaID == id)!;
+        Tareas Tarea = TareasPendientes.Find(t => t.TareaID == id)!;
         if (Tarea != null)
         {
             TareasPendientes.Remove(Tarea);
@@ -68,5 +68,44 @@ class Program
             Console.WriteLine("Tarea no encontrada.");
         }
     }
-}
+      static void buscarPorDes()
+        {
+            Console.Write("Ingrese la palabra clave a buscar: ");
+            string keyword = Console.ReadLine()!;
+            bool encontrada = false;
+
+            foreach (var tarea in TareasPendientes)
+            {
+                if (tarea.descripcion!.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("[Pendiente] " + tarea);
+                    encontrada = true;
+                }
+            }
+
+            foreach (var tarea in TareasRealizadas)
+            {
+                if (tarea.descripcion!.Contains(keyword, StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("[Realizada] " + tarea);
+                    encontrada = true;
+                }
+            }
+
+            if (!encontrada)
+                Console.WriteLine("No se encontraron tareas con esa palabra.");
+        }
+
+        static void Mostrar()
+        {
+            Console.WriteLine("\n--- Tareas Pendientes ---");
+            if (TareasPendientes.Count == 0) Console.WriteLine("Ninguna");
+            TareasPendientes.ForEach(t => Console.WriteLine(t));
+
+            Console.WriteLine("\n--- Tareas Realizadas ---");
+            if (TareasRealizadas.Count == 0) Console.WriteLine("Ninguna");
+            TareasRealizadas.ForEach(t => Console.WriteLine(t));
+        }
+    }
+
 
